@@ -1,8 +1,16 @@
 <?php
 
-/*
- * You can place your custom package configuration in here.
- */
 return [
-
+    /*
+     * Database 
+     */
+    "database" => [
+        "tables" => [
+            "surveys" => "breuermarcel_surveys",
+            "sections" => "breuermarcel_sections",
+            "questions" => "breuermarcel_questions",
+            "entries" => "breuermarcel_entries",
+            "answers" => "breuermarcel_answers"
+        ]
+    ]
 ];

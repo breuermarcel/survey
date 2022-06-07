@@ -10,8 +10,14 @@ composer require breuermarcel/survey
 
 ## Usage
 
-```php
+Require the package using composer.
+```bash
+composer require breuermarcel/survey
+```
 
+Publish package migrations.
+```php
+php artisan vendor:publish --provider="Breuermarcel\Survey\SurveyServiceProvider" --tag="migrations"
 ```
 
 ### Security
