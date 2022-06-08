@@ -21,7 +21,7 @@ class SurveyServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('survey.php'),
+                __DIR__.'/../config/survey.php' => config_path('survey.php'),
             ], 'config');
 
             // Publishing the views.
