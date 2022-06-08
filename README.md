@@ -15,9 +15,19 @@ Require the package using composer.
 composer require breuermarcel/survey
 ```
 
-Publish package migrations.
+Or require package using git.
+```bash
+git clone git@github.com:breuermarcel/survey.git
+````
+
+Adjust composer.json and add package to psr-4.
+```json
+"Breuermarcel\\Survey\\": "packages/survey/src",
+```
+
+Register package in config/app.php.
 ```php
-php artisan vendor:publish --provider="Breuermarcel\Survey\SurveyServiceProvider" --tag="migrations"
+Breuermarcel\Survey\SurveyServiceProvider::class,
 ```
 
 ### Security

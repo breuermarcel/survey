@@ -4,5 +4,10 @@ namespace Breuermarcel\Survey;
 
 class Survey
 {
-    // Build your next great package.
+    /**
+     * @return string
+     */
+    public function index() {
+        return "Working!";
+    }
 }
