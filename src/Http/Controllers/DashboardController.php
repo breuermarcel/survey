@@ -8,9 +8,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $survey = Survey::all();
-
-        return view("survey::default")->with(["survey"=> $survey]);
+        //
     }
 
     public function show()
