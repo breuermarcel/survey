@@ -30,6 +30,11 @@ Register package in config/app.php.
 Breuermarcel\Survey\SurveyServiceProvider::class,
 ```
 
+Migrate tables
+```php
+php artisan migrate
+```
+
 ### Security
 
 If you discover any security related issues, please email breuer.marcel@outlook.com instead of using the issue tracker.
