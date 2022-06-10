@@ -12,5 +12,5 @@ return [
             "entries" => "breuermarcel_entries",
             "answers" => "breuermarcel_answers"
         ]
-        ],
+    ],
 ];
