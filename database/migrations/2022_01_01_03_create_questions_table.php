@@ -9,12 +9,12 @@ return new class extends Migration
 
     /**
      * Run the migrations.
-     * 
+     *
      * @return void
      */
     public function up()
     {
-        Schema::create(config("survey.database.tables.questions"), function (Blueprint $table) {
+        Schema::create("questions", function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger("survey_id")->nullable();
             $table->unsignedInteger("section_id")->nullable();
@@ -28,11 +28,11 @@ return new class extends Migration
 
     /**
      * Reverse the migration
-     * 
+     *
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists(config("survey.database.tables.questions"));
+        Schema::dropIfExists("questions");
     }
 };

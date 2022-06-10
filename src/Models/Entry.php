@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Entry extends Model
 {
-    protected $table = config("survey.database.tables.entries");
+    protected $table = "entries";
 
     /**
      * The attributes that are mass assignable.

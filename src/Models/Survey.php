@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Survey extends Model
 {
-    protected $table = config("survey.database.tables.surveys");
+    protected $table = "surveys";
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +15,8 @@ class Survey extends Model
      */
     protected $fillable = [
         "name",
-        "settings"
+        "settings",
+        "hash"
     ];
 
     /**
@@ -26,7 +27,6 @@ class Survey extends Model
     protected $casts = [
         "settings" => "array",
     ];
-
 
     /**
      * Questions
@@ -56,5 +56,17 @@ class Survey extends Model
     public function entries()
     {
         return $this->hasMany(Entry::class);
+    }
+
+    /**
+     * Rules.
+     *
+     * @return mixed
+     */
+    public function getRulesAttribute()
+    {
+        return $this->questions->mapWithKeys(function ($question) {
+            return [$question->key => $question->rules];
+        })->all();
     }
 }

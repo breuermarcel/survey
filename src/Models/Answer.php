@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Answer extends Model
 {
-    protected $table = config("survey.database.tables.answers");
+    protected $table = "answers";
 
     /**
      * The attributes that are mass assignable.

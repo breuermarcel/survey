@@ -9,26 +9,27 @@ return new class extends Migration
 
     /**
      * Run the migrations.
-     * 
+     *
      * @return void
      */
     public function up()
     {
-        Schema::create(config("survey.database.tables.surveys"), function (Blueprint $table) {
+        Schema::create("surveys", function (Blueprint $table) {
             $table->id();
             $table->string("name");
             $table->json("settings")->nullable();
+            $table->string("hash"); # for user authentication
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migration
-     * 
+     *
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists(config("survey.database.tables.surveys"));
+        Schema::dropIfExists("surveys");
     }
 };

@@ -12,7 +12,7 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create(config("survey.database.tables.entries"), function (Blueprint $table) {
+        Schema::create("entries", function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger("survey_id");
             $table->unsignedInteger("participant_id")->nullable();
@@ -27,6 +27,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists(config("survey.database.tables.entries"));
+        Schema::dropIfExists("entries");
     }
 };

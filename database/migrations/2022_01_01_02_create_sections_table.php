@@ -14,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create(config("survey.database.tables.sections"), function (Blueprint $table) {
+        Schema::create("sections", function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger("survey_id")->nullable();
             $table->string("name");
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config("survey.database.tables.sections"));
+        Schema::dropIfExists("sections");
     }
 };
